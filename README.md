@@ -1,6 +1,6 @@
 django project/api to shorten a url
 
-to tun project
+to run project
 ================
 clone the repo
 cd shortener
