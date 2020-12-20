@@ -3,6 +3,7 @@ django project/api to shorten a url
 to run project
 ================
 clone the repo
+git clone https://github.com/Dilipsa/shortener
 cd shortener
 python3 -mvenv venv/                virtualenv venv
 source venv/bin/activate/           source venv/Scripts/activate
@@ -21,7 +22,7 @@ password : password@123
 
 api endpoints
 =======================================================
-create shottened urls------->http://127.0.0.1:8000/api/
+create shortened urls------->http://127.0.0.1:8000/api/
 
 list of all urls------------>http://127.0.0.1:8000/api/all-urls/
 
