@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="alert alert-info border-success h4">Welcome to Url Shortener Service</div>
+<p>Fetch origial url from shorttened url. for creating short url, and to navigate to the original URL by clicking on the shortened URL click <a href="{% url 'url:short' %}">here.</a></p>
+<div style="overflow-x:auto">
+<table class="table table-striped table-bordered  border-success">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Shortened Urls</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for obj in object_list %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td><a href= "{% url 'url:original_url' obj.slug %}"> {{obj.get_short_url}} </a></td>
+      <td><a href= "{% url 'url:delete_url' obj.slug %}" class="btn btn-danger"> delete </a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col mx-auto mt-4">
+    <form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-light btn-outline-info btn-block" type="submit" value="submit">
+    </form>
+<table class="table table-striped table-bordered  border-success">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Shortened Urls</th>
+      <th scope="col">original Urls</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td><a href= "{% url 'url:redirect' d.slug %}"> {{d.get_short_url}} </a></td>
+      <td> {{d.url|truncatechars:80}}</td>
+      <td><a href= "{% url 'url:delete_url' d.slug %}" class="btn btn-danger">delete</a>
+      </td>
+    
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post">
+{% csrf_token %}
+<h5>Are you sure, this can not be undone!!!</h5>
+<input class="btn btn-light btn-outline-danger" type="submit" value="confirm">
+</form>
+{% endblock content %}

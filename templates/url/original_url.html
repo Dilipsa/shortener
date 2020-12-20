@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <strong>original Urls</strong> <a class=" btn btn-light text-info" href="{% url 'url:shortened_url_list' %}">go back to list</a>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="{{object.url}}">{{object.url}}</a></li>
+  </ul>
+</div>
+{% endblock content %}
